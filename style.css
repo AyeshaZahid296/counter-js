@@ -1,0 +1,122 @@
+/* General Styling */
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    /* background: linear-gradient(to bottom, #cceeff, #ffffff); */
+    background-image: url("./images/blue-sky-clouds.webp");
+    /* background-image: url("./images/blue-sky.jpg"); */
+    /* Random cloud background image */
+    background-size: cover;
+    /* Cover the whole background */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    /* background-color: #cceeff; */
+}
+.main-container{
+    display: flex;
+    align-items:center;
+    justify-content:center ;
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+    gap: 0px;
+    position: absolute;
+    
+    
+}
+#dog-gif{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+/* Counter Container */
+.counter-container {
+    text-align: center;
+    background: rgba(255, 241, 193, 0.9);
+    /* Light peach background with transparency for a soft look */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: bounceIn 1s;
+    margin-top: 0px;
+    /* padding-top: 0px; */
+    width: 90vh;
+    height: 35vh;
+    justify-content: center;
+
+}
+
+h1 {
+    color: #ff6f61;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Counter Value */
+#counter-value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff9f1a;
+    margin: 20px 0;
+    transition: transform 0.2s ease-in-out;
+}
+
+#counter-value.grow {
+    transform: scale(1.2);
+}
+
+/* Buttons */
+.buttons button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#decrease {
+    background-color: #ff6f61;
+    color: white;
+}
+
+#reset {
+    background-color: #ffee58;
+    color: rgb(148, 8, 8);
+}
+
+#increase {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Hover Effects */
+.buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation: Bounce In */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
