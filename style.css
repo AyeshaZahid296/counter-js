@@ -1,10 +1,12 @@
 /* General Styling */
-*{
+* {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
 }
+
 body {
+    overflow: hidden;
     font-family: "Comic Sans MS", cursive, sans-serif;
     /* background: linear-gradient(to bottom, #cceeff, #ffffff); */
     background-image: url("./images/blue-sky-clouds.webp");
@@ -20,37 +22,34 @@ body {
     margin: 0;
     /* background-color: #cceeff; */
 }
-.main-container{
+
+.main-container {
     display: flex;
-    align-items:center;
-    justify-content:center ;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
     gap: 0px;
+    position: relative;
+    animation: bounceIn 1s;
+}
+
+#dog-gif {
+    margin: 0;
+    padding: 0;
     position: absolute;
-    
-    
+    top: -80%;
 }
-#dog-gif{
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-}
+
 /* Counter Container */
 .counter-container {
     text-align: center;
     background: rgba(255, 241, 193, 0.9);
-    /* Light peach background with transparency for a soft look */
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-    animation: bounceIn 1s;
     margin-top: 0px;
-    /* padding-top: 0px; */
     width: 90vh;
-    height: 35vh;
-    justify-content: center;
-
 }
 
 h1 {
@@ -59,12 +58,10 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Counter Value */
 #counter-value {
     font-size: 3rem;
     font-weight: bold;
     color: #ff9f1a;
-    margin: 20px 0;
     transition: transform 0.2s ease-in-out;
 }
 
@@ -73,15 +70,25 @@ h1 {
 }
 
 /* Buttons */
-.buttons button {
+button {
     padding: 10px 20px;
     margin: 10px;
+    width: 30vh;
     font-size: 18px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    gap: 20px;
 }
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
 
 #decrease {
     background-color: #ff6f61;
@@ -118,5 +125,42 @@ h1 {
 
     100% {
         transform: scale(1);
+    }
+}
+
+@media (max-width: 900px) {
+    .main-container {
+        flex-wrap: wrap;
+    }
+
+    #dog-gif img {
+        width: 70vw;
+        top: -20px;
+    }
+
+    .counter-container {
+        width: 85%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #counter-value {
+        font-size: 1.8rem;
+    }
+
+    .buttons button {
+        width: 80%;
+        font-size: 0.8rem;
+        padding: 10px 15px;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .buttons {
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
     }
 }
